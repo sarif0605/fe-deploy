@@ -73,16 +73,12 @@
     <div class="navbar-end">
       <ul class="menu menu-horizontal px-4 space-x-2">
         <li v-if="authStore.userToken === null">
-          <RouterLink
-            class="hidden sm:btn sm:btn-secondary"
-            :to="{ name: 'Login' }"
+          <RouterLink class="hidden sm:block" :to="{ name: 'Login' }"
             >Login</RouterLink
           >
         </li>
         <li v-if="authStore.userToken === null">
-          <RouterLink
-            class="hidden sm:btn sm:btn-accent"
-            :to="{ name: 'Register' }"
+          <RouterLink class="hidden sm:block" :to="{ name: 'Register' }"
             >Register</RouterLink
           >
         </li>

@@ -91,10 +91,10 @@ const $toast = useToast();
 const authStore = useAuthStore();
 const router = useRouter();
 
-const getMe = reactive({
+let getMe = reactive({
   name: "",
 });
-const getProfile = reactive({
+let getProfile = reactive({
   age: "",
   bio: "",
 });

@@ -9,7 +9,8 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://localhost:8000/api",
+        target:
+          "https://splendid-loutitia-pelatihan-superbootcamp-1b641c17.koyeb.app/api/v1",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
