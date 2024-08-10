@@ -1,9 +1,15 @@
 <template>
   <div>
     <div class="modal" :class="{ 'modal-open': visible }">
-      <div class="modal-box">
+      <div class="modal-box relative z-20">
         <p class="py-4">{{ data ? "Update" : "Tambah" }} Book</p>
         <form @submit.prevent="handleSubmit" enctype="multipart/form-data">
+          <div
+            v-if="authStore.isLoading"
+            class="absolute inset-0 flex items-center justify-center bg-white bg-opacity-75 z-10"
+          >
+            <Loading />
+          </div>
           <div role="alert" class="alert alert-error" v-if="authStore.isErr">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -35,12 +41,6 @@
                 </ul>
               </li>
             </ul>
-          </div>
-          <div
-            v-if="authStore.isLoading"
-            class="absolute top-0 left-0 w-full h-full bg-base-200 flex justify-center items-center z-30"
-          >
-            <Loading />
           </div>
           <label class="input input-bordered flex items-center gap-2">
             <input

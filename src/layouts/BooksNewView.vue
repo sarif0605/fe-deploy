@@ -3,7 +3,13 @@
   <div
     class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-4"
   >
-    <Loading v-if="authStore.isLoading" />
+    <div
+      class="flex justify-center items-center"
+      v-if="authStore.isLoading"
+      style="background-color: rgba(0, 0, 0, 0.5)"
+    >
+      <Loading />
+    </div>
 
     <div v-if="!authStore.isLoading && dataBook.length === 0">
       <div

@@ -27,6 +27,9 @@
           <li><RouterLink :to="{ name: 'Home' }">Home</RouterLink></li>
           <li><RouterLink :to="{ name: 'Category' }">Category</RouterLink></li>
           <li><RouterLink :to="{ name: 'Book' }">Book</RouterLink></li>
+          <li>
+            <RouterLink :to="{ name: 'HistoryBorrow' }">History</RouterLink>
+          </li>
           <li v-if="!authStore.userToken">
             <RouterLink class="sm:hidden" :to="{ name: 'Login' }"
               >Login</RouterLink

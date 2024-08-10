@@ -103,7 +103,7 @@ export const useAuthStore = defineStore("auth", () => {
         Authorization: `Bearer ${userToken.value}`,
       },
     });
-    return data.data;
+    return data;
   };
 
   const updateUser = async (name) => {

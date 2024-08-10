@@ -1,11 +1,10 @@
 <template>
   <div class="mx-auto max-w-6xl px-8 rounded-xl py-20 md:py-24">
-    <div class="mx-auto max-w-6xl px-8 rounded-xl">
+    <div class="mx-auto max-w-6xl px-8 rounded-xl relative z-20">
       <form @submit.prevent="handleSubmit">
         <div
-          class="absolute top-0 left-0 w-full h-full flex justify-center items-center z-50"
           v-if="authStore.isLoading"
-          style="background-color: rgba(0, 0, 0, 0.5)"
+          class="absolute inset-0 flex items-center justify-center bg-white bg-opacity-75 z-10"
         >
           <Loading />
         </div>
@@ -91,22 +90,22 @@ const $toast = useToast();
 const authStore = useAuthStore();
 const router = useRouter();
 
-let getMe = reactive({
+const getMe = reactive({
   name: "",
 });
-let getProfile = reactive({
+const getProfile = reactive({
   age: "",
   bio: "",
 });
 
 const fetchUserData = async () => {
   try {
-    const me = await authStore.getUser();
+    const dataMe = await authStore.getUser();
     const profile = await authStore.getProfile();
-    getMe.name = me.name;
-    getProfile = profile;
-    Object.assign(getProfile, profile);
-    console.log("User data loaded:", profile.bio);
+    getMe.name = dataMe.name;
+    getProfile.age = profile.data.age;
+    getProfile.bio = profile.data.bio;
+    console.log("User data loaded:", profile.data);
   } catch (error) {
     console.log("Error loading user data:", error);
   }

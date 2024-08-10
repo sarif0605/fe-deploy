@@ -95,6 +95,7 @@ import { customeApi } from "@/api";
 import { useAuthStore } from "@/stores/AuthStore";
 import NameHeader from "@/components/NameHeader.vue";
 import { useToast } from "vue-toast-notification";
+import Loading from "@/components/Loading.vue";
 const $toast = useToast();
 const authStore = useAuthStore();
 const router = useRouter();

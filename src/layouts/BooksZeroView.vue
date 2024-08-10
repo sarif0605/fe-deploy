@@ -3,7 +3,13 @@
   <div
     class="carousel carousel-center bg-primary rounded-box w-full space-x-4 p-4 items-center"
   >
-    <Loading v-if="authStore.isLoading" />
+    <div
+      class="flex justify-center items-center"
+      v-if="authStore.isLoading"
+      style="background-color: rgba(0, 0, 0, 0.5)"
+    >
+      <Loading />
+    </div>
 
     <div
       v-if="!authStore.isLoading && dataBook.length === 0"

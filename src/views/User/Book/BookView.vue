@@ -85,11 +85,14 @@ import { customeApi } from "@/api";
 import { ref, onMounted, watch } from "vue";
 import NameHeader from "@/components/NameHeader.vue";
 import HeaderBookView from "@/layouts/HeaderBookView.vue";
+import { useAuthStore } from "@/stores/AuthStore";
 import Loading from "@/components/Loading.vue";
 const dataBook = ref([]);
 const searchQuery = ref("");
 const currentPage = ref(1);
 const pagination = ref({});
+
+const authStore = useAuthStore();
 
 const getAll = async (page = 1, perPage = 10) => {
   authStore.isLoading = true;

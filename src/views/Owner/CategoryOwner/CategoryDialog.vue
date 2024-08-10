@@ -5,7 +5,7 @@
         <p class="py-4">{{ data ? "Update" : "Tambah" }} Category</p>
         <form @submit.prevent="handleSubmit">
           <div
-            class="absolute top-0 left-0 w-full h-full flex justify-center items-center z-50"
+            class="absolute top-0 left-0 w-full h-full flex justify-center items-center z-30"
             v-if="authStore.isLoading"
             style="background-color: rgba(0, 0, 0, 0.5)"
           >
@@ -69,6 +69,7 @@ import { reactive, watch, onMounted, watchEffect } from "vue";
 import { customeApi } from "@/api";
 import { useAuthStore } from "@/stores/AuthStore";
 import { useToast } from "vue-toast-notification";
+import Loading from "@/components/Loading.vue";
 const $toast = useToast();
 const authStore = useAuthStore();
 const props = defineProps({

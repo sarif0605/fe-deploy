@@ -26,7 +26,9 @@
     <!-- Kolom Carousel -->
     <div class="lg:col-span-2 flex">
       <div class="carousel carousel-center bg-primary rounded-box w-full space-x-4 p-4">
-  <Loading v-if="isLoading" />
+        <div class="flex justify-center items-center" v-if="authStore.isLoading" style="background-color: rgba(0, 0, 0, 0.5)">
+      <Loading />
+    </div>
   
   <div v-if="!isLoading && selectedCategoryBooks.length === 0" class="carousel-item">
     <div class="card bg-base-100 w-80 h-96 shadow-xl flex items-center justify-center transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl">
@@ -70,7 +72,9 @@ import { customeApi } from "@/api";
 import NameHeader from "@/components/NameHeader.vue";
 import Loading from "@/components/Loading.vue"; // Import the loading component
 import { onMounted, ref } from "vue";
+import { useAuthStore } from "@/stores/AuthStore";
 
+const authStore = useAuthStore();
 const listCategory = ref([]);
 const selectedCategoryBooks = ref([]);
 const isLoading = ref(false); // Track the loading state

@@ -14,7 +14,9 @@
         </div>
       </div>
       <div class="overflow-hidden mb-5">
-        <Loading v-if="authStore.isLoading" />
+        <div v-if="authStore.isLoading" class="flex justify-center py-4">
+          <Loading />
+        </div>
         <div class="overflow-x-auto" v-else>
           <table class="table min-w-full">
             <thead>

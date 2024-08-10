@@ -45,7 +45,7 @@
               <tr
                 class="bg-base-100"
                 v-for="(book, i) in dataBook"
-                v-if="dataBook && dataBook.length > 0"
+                v-if="dataBook"
               >
                 <th>{{ i + 1 }}</th>
                 <th>{{ book.title }}</th>
@@ -58,7 +58,7 @@
                     alt="poster"
                   />
                 </th>
-                <th>
+                <th class="space-x-2">
                   <button
                     class="btn btn-secondary btn-sm sm:btn-md"
                     @click="openEditDialog(book)"

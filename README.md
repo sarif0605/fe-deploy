@@ -27,3 +27,5 @@ npm run dev
 ```sh
 npm run build
 ```
+
+Link Deploy = https://fe-deploy-xi.vercel.app/
