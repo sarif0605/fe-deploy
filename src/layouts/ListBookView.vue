@@ -52,7 +52,7 @@
             Detail
           </RouterLink>
           <RouterLink 
-            v-if="book.stock > 0"
+            v-if="book.stock > 0 && authStore.userToken"
             :to="{ name: 'BorrowBookUser', params: { id: book.id } }"
             class="btn btn-secondary transition duration-300 ease-in-out transform hover:scale-110 hover:bg-secondary"
           >

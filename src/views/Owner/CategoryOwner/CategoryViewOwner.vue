@@ -180,6 +180,7 @@ const nextPage = () => {
 };
 
 onMounted(() => {
+  authStore.isErr = false;
   getAll();
 });
 </script>

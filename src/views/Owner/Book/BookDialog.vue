@@ -6,7 +6,7 @@
         <form @submit.prevent="handleSubmit" enctype="multipart/form-data">
           <div
             v-if="authStore.isLoading"
-            class="absolute inset-0 flex items-center justify-center bg-white bg-opacity-75 z-10"
+            class="absolute inset-0 top-0 bottom-0 left-0 right-0 flex items-center justify-center bg-white bg-opacity-75 z-10"
           >
             <Loading />
           </div>
@@ -95,12 +95,15 @@
               <img :src="book.previewImage" />
             </div>
           </div>
-          <div class="modal-action">
+          <label class="flex items-center gap-2 mt-2">
             <button class="btn btn-primary" type="submit">Kirim</button>
             <button class="btn btn-base-300" type="button" @click="closeDialog">
               Close
             </button>
-          </div>
+          </label>
+          <!-- <div class="modal-action z-10">
+            
+          </div> -->
         </form>
       </div>
     </div>
