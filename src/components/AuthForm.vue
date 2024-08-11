@@ -136,7 +136,7 @@
               class="w-5 h-5 mr-2"
             />
             {{
-              props.isRegister ? "Login with Google" : "Register with Google"
+              props.isRegister ? "Register with Google" : "Login with Google"
             }}
           </button>
         </div>

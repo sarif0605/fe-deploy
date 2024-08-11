@@ -160,7 +160,8 @@ export const useAuthStore = defineStore("auth", () => {
   };
 
   const loginWithGoogle = () => {
-    window.location.href = "http://localhost:8000/api/v1/auth/google";
+    window.location.href =
+      "https://splendid-loutitia-pelatihan-superbootcamp-1b641c17.koyeb.app/api/v1/auth/google";
   };
 
   const handleGoogleCallback = async () => {
